@@ -1,13 +1,6 @@
-# Sample Hardhat Project
+## Solidity - Problem Solving Tool
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+<br>
+Let me help you enjoy PS with solidity. *which is never recommended though*<br><br>
+expected stacks<br>
+React, Node, Typescript, Solidity, Hardhat, AWS
