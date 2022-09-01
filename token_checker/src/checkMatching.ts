@@ -11,7 +11,13 @@ const contractAddr: string = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
 
 const exec = async (contractAddr: string) => {
   const bytecode: string = await _getCode(contractAddr);
-  _checkMatching(bytecode);
+
+  const is20: boolean = _checkMatching(bytecode, 20);
+  if (is20 == true) console.log("IS20");
+
+  const is721: boolean = _checkMatching(bytecode, 721);
+  if (is721 == true) console.log("IS721");
+
   // const res: number[] = fss.indexOf("abcdefg", "yuu");
 };
 
@@ -20,11 +26,22 @@ const _getCode = async (contractAddr: string): Promise<string> => {
   return bytecode;
 };
 
-const _checkMatching = (bytecode: string) => {
-  Object.keys(erc721signature).forEach((key: string) => {
-    console.log(fss.indexOf(bytecode, key));
-    // console.log(key);
-  });
+const _checkMatching = (bytecode: string, tokentype: number): boolean => {
+  let sig;
+  if (tokentype == 20) sig = erc20signature;
+  if (tokentype == 721) sig = erc721signature;
+
+  const keys: string[] = Object.keys(sig);
+  for (let i = 0; i < keys.length; i++) {
+    const key: string = keys[i];
+    if (fss.indexOf(bytecode, key).length != 0) {
+      console.log("FOUND:", sig[key]);
+    } else {
+      console.log("NOT FOUND:", sig[key]);
+      return false;
+    }
+  }
+  return true;
 };
 
 exec(contractAddr);
