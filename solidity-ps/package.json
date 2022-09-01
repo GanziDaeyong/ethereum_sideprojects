@@ -1,0 +1,27 @@
+{
+  "name": "ethereum_sideprojects",
+  "version": "1.0.0",
+  "description": "Let me help you enjoy PS with solidity, which is never recommended though. <br> <br> expected stacks <br> React, Node, Typescript, Solidity, Hardhat, AWS",
+  "main": "hardhat.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GanziDaeyong/ethereum_sideprojects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GanziDaeyong/ethereum_sideprojects/issues"
+  },
+  "homepage": "https://github.com/GanziDaeyong/ethereum_sideprojects#readme",
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "hardhat": "^2.10.2"
+  }
+}
