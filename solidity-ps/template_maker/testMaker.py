@@ -60,7 +60,7 @@ for i in range(len(testcases)):
 
 desc = f"{st}describe('Test begins', () => {{{it_collected}}})"
 
-with open("temptest.js", "w", encoding="utf-8") as fw:
+with open("./hardhat_tester/test/test.js", "w", encoding="utf-8") as fw:
     fw.write(desc)
 print(desc)
 
