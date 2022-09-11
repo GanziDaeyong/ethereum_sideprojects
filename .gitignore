@@ -1,3 +1,5 @@
+solvenv
+.vscode
 node_modules
 .env
 coverage

@@ -1,16 +1,19 @@
+import string
 from typing import Union
-from fastapi import FastAPI, Path, Query
+
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+
+class CodeObj(BaseModel):
+    cred: str
+    code: str
+
 
 app = FastAPI()
 
 
-
-@app.get("/tes")
-async def hi():
-    return "hi"
-
-@app.get("/test/")
-async def getcode(code: str= "defaultcode"):
-    result = code + "<- This is answer"
-    return {"message": result}
-
+@app.post("/submitcode/")
+async def getcode(code: CodeObj):
+    print(code)
+    return code
