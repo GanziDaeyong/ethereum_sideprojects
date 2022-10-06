@@ -1,7 +1,7 @@
 
 const { ethers } = require("hardhat");
 const { expect } = require("chai");
-const { performance } = require("perf_hooks");
+//const { performance } = require("perf_hooks");
 const fs = require("fs").promises;
 const setting = async () => {
   const PS_factory = await ethers.getContractFactory("PS");
@@ -10,8 +10,8 @@ const setting = async () => {
   return [deployed, tcList, solList];
 };
 const _getDir = async () => {
-  const tcPath = "./tc&sol/tc/";
-  const solPath = "./tc&sol/sol/";
+  const tcPath = "../user/testcases/";
+  const solPath = "../user/solutions/";
   let tcList = await fs.readdir(tcPath);
   let solList = await fs.readdir(solPath);
   for (i = 0; i < tcList.length; i++) {
@@ -20,13 +20,10 @@ const _getDir = async () => {
   }
   return [tcList, solList];
 };
-describe('Test begins', () => {it('tc01', async()=>{
-        let startTime = performance.now();
+describe('Test begins', () => {it('tc1', async()=>{
         const [deployed, tcList, solList] = await setting();
-        let endTime = performance.now();
-        console.log(`Call to doSomething took ${endTime - startTime} milliseconds`);
-        const solFile = "./tc&sol/sol/sol01";
-        const tcFile = "./tc&sol/tc/tc01";
+        const solFile = "../user/solutions/sol1";
+        const tcFile = "../user/testcases/tc1";
         let answer = await fs.readFile(solFile);
         answer = answer.toString().trim();
         let tc = await fs.readFile(tcFile);
@@ -34,13 +31,10 @@ describe('Test begins', () => {it('tc01', async()=>{
         tc = tc.replaceAll("\n", " ");
         const userRes = await deployed.exec(tc);
         expect(userRes).to.equal(answer);
-    });it('tc02', async()=>{
-        let startTime = performance.now();
+    });it('tc2', async()=>{
         const [deployed, tcList, solList] = await setting();
-        let endTime = performance.now();
-        console.log(`Call to doSomething took ${endTime - startTime} milliseconds`);
-        const solFile = "./tc&sol/sol/sol02";
-        const tcFile = "./tc&sol/tc/tc02";
+        const solFile = "../user/solutions/sol2";
+        const tcFile = "../user/testcases/tc2";
         let answer = await fs.readFile(solFile);
         answer = answer.toString().trim();
         let tc = await fs.readFile(tcFile);
@@ -48,13 +42,10 @@ describe('Test begins', () => {it('tc01', async()=>{
         tc = tc.replaceAll("\n", " ");
         const userRes = await deployed.exec(tc);
         expect(userRes).to.equal(answer);
-    });it('tc03', async()=>{
-        let startTime = performance.now();
+    });it('tc3', async()=>{
         const [deployed, tcList, solList] = await setting();
-        let endTime = performance.now();
-        console.log(`Call to doSomething took ${endTime - startTime} milliseconds`);
-        const solFile = "./tc&sol/sol/sol03";
-        const tcFile = "./tc&sol/tc/tc03";
+        const solFile = "../user/solutions/sol3";
+        const tcFile = "../user/testcases/tc3";
         let answer = await fs.readFile(solFile);
         answer = answer.toString().trim();
         let tc = await fs.readFile(tcFile);

@@ -25,7 +25,6 @@ contract PS {
         ///////////////////
 
 
-
         uint n = st2num(input[0]);
 
         uint256[30] memory fib;
