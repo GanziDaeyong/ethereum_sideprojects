@@ -24,8 +24,9 @@ contract PS {
         //// CODE AREA ////
         ///////////////////
 
+        // below is an example. //
 
-        uint n = st2num(input[0]);
+        uint n = str2uint(input[0]);
 
         uint256[30] memory fib;
         fib[0]=1; fib[1]=1;
@@ -39,9 +40,9 @@ contract PS {
 
     }
 
+    // Never modify below functions //
 
-
-    function st2num(string memory numString) public pure returns (uint) {
+    function str2uint(string memory numString) public pure returns (uint) {
         uint  val=0;
         bytes   memory stringBytes = bytes(numString);
         for (uint  i =  0; i<stringBytes.length; i++) {
