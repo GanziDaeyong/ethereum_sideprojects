@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 contract Wallet {
-    address payable public owner;
+    address public owner;
 
     constructor() payable {
         owner = msg.sender;
