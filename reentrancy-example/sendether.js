@@ -2,10 +2,16 @@ const Web3 = require("web3");
 const web3 = new Web3("http://localhost:7545"); // ganache
 const Tx = require("ethereumjs-tx").Transaction;
 
-const addr_list = [];
-const pk_list = [];
+const addr_list = [
+  "0x280Ad3C81F8Be014a0F9eAc736552D193c4DEc0d",
+  "0xef8D93b8A10E1DE8d3e675fAF6A18248e7f2F503",
+];
+const pk_list = [
+  "263f7e4cf3189d575aed26169ce580aee75bfbc087e26f513e760cd836a5b9d0",
+  "3987732ae4a82bc14c5faec3660625766b12d4cf1fabe575059dec326fccce24",
+];
 
-const to_addr = "0xca9d6e79f2B4a02a41F8aB7E7A86755E3CB58bdD";
+const to_addr = "0x165d456aA48945E59Fe13eD69e8D5050e62c04ec";
 
 const toBuffer = (pk) => {
   return Buffer.from(pk, "hex");

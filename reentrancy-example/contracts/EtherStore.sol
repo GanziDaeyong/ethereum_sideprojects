@@ -17,7 +17,7 @@ contract EtherStore {
     }
 
     function withdraw() public {
-        emit withdrawCalled(msg.sender, msg.value);
+        emit withdrawCalled(msg.sender, balances[msg.sender]);
         uint bal = balances[msg.sender];
         require(bal > 0);
 
@@ -25,7 +25,7 @@ contract EtherStore {
         require(sent, "Failed to send Ether");
 
         balances[msg.sender] = 0;
-        emit withdrawSuccess(msg.sender, msg.value);
+        emit withdrawSuccess(msg.sender, balances[msg.sender]);
 
     }
 
@@ -34,3 +34,5 @@ contract EtherStore {
         return address(this).balance;
     }
 }
+
+//0x165d456aA48945E59Fe13eD69e8D5050e62c04ec

