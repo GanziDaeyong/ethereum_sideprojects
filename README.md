@@ -3,9 +3,9 @@
 <br>
 
 ### solidity-ps
-can't I enjoy PS with solidity?
+enjoy problem solving with solidity!
 
 <br>
 
 ### token type identifier
-well, function signatures are more than enough to distinguish token types.
+function signatures are more than enough to distinguish token types.
