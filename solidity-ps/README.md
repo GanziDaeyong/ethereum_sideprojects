@@ -16,7 +16,7 @@ you need...
 then..
 
 ```
-$ git clone
+$ git clone https://github.com/GanziDaeyong/Solidity-PS-Helper.git
 $ cd ./hardhat_tester
 $ npm install
 ```
@@ -25,20 +25,24 @@ $ npm install
 
 ## Guide
 
-First, prepare a ps-problem with a number of testcases and corresponding solutions.
+**First, prepare a ps-problem with a number of testcases and corresponding solutions.**
 
 > Your testcases and solutions should be numbered in pair.<br>For example, `tc1.txt` should match `sol1.txt` and `tc2.txt` should match `sol2.txt`.. so on.
 
-Second, place testcases on `./user/testcases/` and solutions on `./user/solutions/`
+**Second, place testcases on `./user/testcases/` and solutions on `./user/solutions/`**
 
-Third, problem-solve at `./user/PS.sol`
+**Third, problem-solve at `./user/PS.sol`**
 
-Last, move to `./user` and run `run.sh`
-
+**Last, move to `./user` and run `run.sh`**
 ```
 $ cd ./user
 $ bash ./run.sh
 ```
+<br>
+
+**Then, you'll see the result below if you pass all the testcases**
+<img width="763" alt="image" src="https://user-images.githubusercontent.com/56102267/194354575-99af34b2-bbef-46fc-958b-84933198c154.png">
+
 
 <br>
 
@@ -63,10 +67,11 @@ this is converted into
 and given to code below as an input
 
 ```
-    function solver(string[] memory input) private view returns (string memory) {
-
-        //// place your code here ////
-    }
+function solver(string[] memory input) private view returns (string memory) {
+					
+            //// place your code here ////
+            
+}
 ```
 
 ### Q. How should I return my answer?
@@ -94,3 +99,4 @@ It's a mere wrapper for hardhat test library. I basically wanted to use solidity
 - You might also want to use `uint2str`, `str2uint` which are library already implemented in `PS.sol`.
 
 - Still have no idea what you'll be doing? Just install it, and `$ bash ./run.sh` in `./user`. I put an example **fibonacci** problem there.
+
